@@ -1,4 +1,5 @@
 <template>
+	<div class="background" src="../assets/loginBg.jpg"></div>
 	<div class="outline-loginForm">
 		<el-text class="mx-1" size="large">LOGIN</el-text>
 		<br/>
@@ -22,13 +23,15 @@
 			<el-button type="success">sign up</el-button>
 		</el-form>
 	</div>
+	
+	
 </template>
 
 <script lang="ts" setup>
 	import {reactive} from 'vue'
 	import type { FormRules } from 'element-plus'
 	import $axios from '@/config/AxiosConfig'
-	import { VIERFY_OK } from '@/common/CommonConfig'
+	import { VIERFY_OK } from '@/common/StringUtils'
 	import router from '@/router/index'
 	import { ElMessage } from 'element-plus'
 	// import axios from 'axios'
@@ -91,11 +94,21 @@
 </script>
 
 <style>
+	.background{
+		background-image: url("../assets/loginBg.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-attachment: fixed;
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		background-size: 100% 100%;
+	}
 	.outline-loginForm{
 		width: 256px;
 		padding: 20px;
 		margin: 0 auto;
-		border-color: skyblue;
+		border-color: darkcyan;
 		border-width: 2px;
 		border-radius: 5px;
 		border-style: solid;
@@ -106,4 +119,5 @@
 	form{
 		margin: 0 auto;
 	}
+	
 </style>
